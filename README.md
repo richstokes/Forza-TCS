@@ -20,7 +20,7 @@ We don't kill power when understeering, since one of the best (read: most fun) w
 &nbsp;
 
 ## Setup
-This code is designed to run on [an ESP32 microcontroller with built in WiFi and OLED display](https://www.amazon.com/gp/product/B072HBW53G/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)  
+This code is designed to run on [an ESP32 microcontroller with built in WiFi and OLED display](https://www.amazon.com/gp/product/B072HBW53G)  
 
 
 ### Controller wiring

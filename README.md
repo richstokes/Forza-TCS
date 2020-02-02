@@ -40,6 +40,8 @@ The objective here is to install 2x wires to "test points" on the controller boa
 
 TP67 is the volts out signal from the triggers' hall sensor, which represents the amount of throttle applied. We use this test point to inject our own throttle signal.  
 
+You can wire an LED to the same pins to get a visual indicator for the TCS kicking in.  
+
 &nbsp;
 
 ### Configuring

@@ -43,6 +43,11 @@ Look for the `// Configurables` section of `ftcs.ino`:
 
 &nbsp;
 
+## Contributions..
+.. are welcome! This is really just a PoC but could probably be iterated over to the point where it would actually be quite good. Feel free to open a PR.
+
+&nbsp;
+
 ## Credits
 Thank you to: 
 - https://github.com/richstokes/Forza-data-tools (This other project of mine is helpful for learning the Forza data format if you'd like to create something similar or learn more)

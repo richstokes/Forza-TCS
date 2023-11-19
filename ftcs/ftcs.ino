@@ -46,35 +46,34 @@ void setup()
 
   WiFiMulti.addAP(
       ssid,
-      password); // Add wifi configuration information.  添加wifi配置信息
-  M5.lcd.print(
+      password);                  // Add wifi configuration information to creds.h
       "\nConnecting to WiFi..."); // Serial port output format string.
-  while (WiFiMulti.run() !=
-         WL_CONNECTED)
-  {
-    M5.lcd.print(".");
-    delay(1000);
-    sum += 1;
-    if (sum == 8)
-      M5.lcd.print("Connect failed!");
-  }
-  M5.lcd.println("\nWiFi connected");
-  M5.lcd.print("IP address: ");
-  M5.lcd.println(
-      WiFi.localIP());
-  delay(500);
+      while (WiFiMulti.run() !=
+             WL_CONNECTED)
+      {
+        M5.lcd.print(".");
+        delay(1000);
+        sum += 1;
+        if (sum == 8)
+          M5.lcd.print("Connect failed!");
+      }
+      M5.lcd.println("\nWiFi connected");
+      M5.lcd.print("IP address: ");
+      M5.lcd.println(
+          WiFi.localIP());
+      delay(500);
 
-  // Init USB keyboard / HID device
-  Keyboard.begin();
-  USB.begin();
+      // Init USB keyboard / HID device
+      Keyboard.begin();
+      USB.begin();
 
-  // Start UDP server
-  if (udp.listen(udpPort))
-  {
-    M5.lcd.println("UDP listening on port " + String(udpPort));
+      // Start UDP server
+      if (udp.listen(udpPort))
+      {
+        M5.lcd.println("UDP listening on port " + String(udpPort));
 
-    udp.onPacket([](AsyncUDPPacket packet)
-                 {
+        udp.onPacket([](AsyncUDPPacket packet)
+                     {
                          if (packet.length() > 310 && packet.length() < 332) // packet length now 331 for motorsport?
                          {                                                   // Check we have a correctly-sized Forza packet. Note Horizon packets are 324 bytes, Motorsport packets are 311 bytes
                              if (packet.length() == 324)
@@ -172,7 +171,7 @@ void setup()
                              M5.lcd.println(packet.length());
                              packet.printf("Not a Forza packet?!", packet.length());
                          } });
-  }
+      }
 }
 
 void loop()

@@ -1,7 +1,7 @@
 # Forza-TCS
 Hardware-based traction control system for the Forza Motorsport &amp; Forza Horizon games.
 
-It uses a [M5Stack CoreS3](https://www.amazon.com/gp/product/B0C7G5GPGC/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) to receive telemetry data from the game. It then acts as a USB Keyboard and sends commands to the Xbox when traction is broken.
+It uses a [M5Stack-CoreS3](https://www.amazon.com/gp/product/B0C7G5GPGC/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) to receive telemetry data from the game. It then acts as a USB Keyboard and sends commands to the Xbox when traction is broken.
 &nbsp;
 
 
@@ -24,19 +24,20 @@ The main loop reads the telemetry data from the game. We look at the slip rate f
 &nbsp;
 
 ### Configuring
-Look for the `// CONFIG //` section of `ftcs.ino`:  
+Look for the `// Configurables` section of `ftcs.ino`:  
 
 - Set your WiFi name and password in `creds.h`
-- Optionally change the UDP port
 - `TCsensitivity` controls how much slip the program will allow before killing throttle
 - `TCspeed` controls the speed above which traction control will kick in - you want a little slip at low speeds to avoid bogging down launches
 - Flash the program to your Core S3
+- `actionString` is what we send to the "keyboard" when traction is lost. Right now its the 'z' key which I have bound to clutch. You probably need to change this. 
 
 
 &nbsp;
 
 ## Usage
 - Once connected OK, the display will show the IP address and port you need to enter in your Forza HUD "data out" settings
+- Plug the device into your Xbox's USB port
 - The display will also show the amount of Forza packets it is processing per second. This should be around 60 since Forza sends telemetry data at 60 frames per second
 - The "L" and "R" values on the display show the amount of slip at each rear wheel in real time
 

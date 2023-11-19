@@ -4,7 +4,7 @@ Hardware-based traction control system for the Forza Motorsport &amp; Forza Hori
 It uses a [M5Stack-CoreS3](https://www.amazon.com/gp/product/B0C7G5GPGC/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) to receive telemetry data from the game over WiFi. It then acts as a USB Keyboard and sends commands to the Xbox when traction is broken.
 &nbsp;
 
-![Alt Text](image.jpg)
+![photo of device](https://github.com/richstokes/Forza-TCS/blob/master/pic.jpeg?raw=true)
 
 
 ## Arduino/M5 setup

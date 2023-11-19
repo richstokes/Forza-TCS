@@ -1,5 +1,5 @@
 # Forza-TCS
-Hardware-based traction control system for the Forza Motorsport &amp; Forza Horizon games.
+> Hardware-based traction control system for the Forza Motorsport &amp; Forza Horizon games.
 
 It uses a [M5Stack-CoreS3](https://www.amazon.com/gp/product/B0C7G5GPGC/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) to receive telemetry data from the game. It then acts as a USB Keyboard and sends commands to the Xbox when traction is broken.
 &nbsp;
@@ -10,6 +10,7 @@ It uses a [M5Stack-CoreS3](https://www.amazon.com/gp/product/B0C7G5GPGC/ref=ppx_
 - Follow [the docs](https://docs.m5stack.com/en/quick_start/cores3/arduino) to set up the Arduino IDE and install the libs
 - Enable USB-OTG mode under the Ardunio tools menu
 
+&nbsp;
 
 ## Intro
 The Forza Motorsport and Forza Horizon games provide an interesting "data out" feature. This transmits realtime telemetry data via UDP.  
@@ -23,15 +24,13 @@ The main loop reads the telemetry data from the game. We look at the slip rate f
 
 &nbsp;
 
-### Configuring
+## Configuring
 Look for the `// Configurables` section of `ftcs.ino`:  
 
 - Set your WiFi name and password in `creds.h`
 - `TCsensitivity` controls how much slip the program will allow before killing throttle
 - `TCspeed` controls the speed above which traction control will kick in - you want a little slip at low speeds to avoid bogging down launches
-- Flash the program to your Core S3
 - `actionString` is what we send to the "keyboard" when traction is lost. Right now its the 'z' key which I have bound to clutch. You probably need to change this. 
-
 
 &nbsp;
 

@@ -1,7 +1,7 @@
 # Forza-TCS
-> Hardware-based traction control system for the Forza Motorsport &amp; Forza Horizon games.
+Hardware-based traction control system for the Forza Motorsport &amp; Forza Horizon games.
 
-It uses a [M5Stack-CoreS3](https://www.amazon.com/gp/product/B0C7G5GPGC/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) to receive telemetry data from the game. It then acts as a USB Keyboard and sends commands to the Xbox when traction is broken.
+It uses a [M5Stack-CoreS3](https://www.amazon.com/gp/product/B0C7G5GPGC/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) to receive telemetry data from the game over WiFi. It then acts as a USB Keyboard and sends commands to the Xbox when traction is broken.
 &nbsp;
 
 
@@ -15,7 +15,7 @@ It uses a [M5Stack-CoreS3](https://www.amazon.com/gp/product/B0C7G5GPGC/ref=ppx_
 ## Intro
 The Forza Motorsport and Forza Horizon games provide an interesting "data out" feature. This transmits realtime telemetry data via UDP.  
 
-This project captures that data on an ESP32, reads the traction information from each tyre, and uses that to kill the cars throttle if too much (configurable) slip is detected. In this case, it does so by applying the clutch. Ideal would be to kill the throttle instead, still thinking about a good way to do that!  
+This project captures that data on an ESP32, reads the traction information from each tyre, and uses that to kill the cars throttle if too much (configurable) slip is detected. In this case, it does so by applying the clutch. Ideal would be to "let go" of the throttle instead, still thinking about a good way to do that!  
 
 &nbsp;
 
@@ -44,6 +44,4 @@ Look for the `// Configurables` section of `ftcs.ino`:
 
 ## Credits
 Thank you to: 
-- http://www.acidmods.com/forum/index.php/topic,44564.new.html
-- https://www.youtube.com/watch?v=qRVTJpwjdZY
 - https://github.com/richstokes/Forza-data-tools (This other project of mine is helpful for learning the Forza data format if you'd like to create something similar or learn more)
